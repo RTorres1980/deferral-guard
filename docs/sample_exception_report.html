@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DeferralGuard Exception Report</title>
+<style>
+:root { --bg:#f6f7f9; --card:#fff; --ink:#1c2430; --muted:#5d6b7c; --line:#e3e7ec;
+        --fail:#b42318; --fail-bg:#fde8e7; --warn:#9a6700; --warn-bg:#fff4d6;
+        --pass:#1a7f37; --pass-bg:#e6f4ea; --accent:#c74634; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#11151a; --card:#1a2028; --ink:#e7ecf2; --muted:#9aa7b6; --line:#2b333d;
+          --fail:#ff8a80; --fail-bg:#3a1d1b; --warn:#f2c661; --warn-bg:#352b12;
+          --pass:#7ee2a0; --pass-bg:#14301f; } }
+body { margin:0; background:var(--bg); color:var(--ink);
+       font:15px/1.5 -apple-system, "Segoe UI", Roboto, sans-serif; }
+main { max-width:1100px; margin:0 auto; padding:24px 16px 48px; }
+header { border-left:4px solid var(--accent); padding-left:14px; margin-bottom:20px; }
+h1 { margin:0; font-size:24px; } h2 { font-size:17px; margin:28px 0 10px; }
+.sub { color:var(--muted); margin-top:4px; }
+.cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:12px; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px; }
+.card b { display:block; font-size:28px; } .card span { color:var(--muted); font-size:13px; }
+.wrap { overflow-x:auto; background:var(--card); border:1px solid var(--line); border-radius:10px; }
+table { border-collapse:collapse; width:100%; min-width:640px; }
+th, td { text-align:left; padding:9px 12px; border-bottom:1px solid var(--line); vertical-align:top; }
+th { font-size:12px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); }
+.mono { font-family:ui-monospace, Menlo, monospace; font-size:13px; white-space:nowrap; }
+.cite { color:var(--muted); font-size:13px; white-space:nowrap; }
+.pill { font-size:12px; font-weight:600; padding:2px 8px; border-radius:99px; }
+.fail { color:var(--fail); background:var(--fail-bg); }
+.warn { color:var(--warn); background:var(--warn-bg); }
+.ai { margin-top:6px; font-size:13px; color:var(--muted); border-left:2px solid var(--line); padding-left:8px; }
+footer { color:var(--muted); font-size:12px; margin-top:24px; }
+</style></head><body><main>
+<header><h1>DeferralGuard 409A Exception Report</h1>
+<div class="sub">Run date 2026-10-28 &middot; 22 rule checks</div></header>
+<div class="cards">
+ <div class="card"><b style="color:var(--fail)">12</b><span>Failures</span></div>
+ <div class="card"><b style="color:var(--warn)">0</b><span>Warnings for review</span></div>
+ <div class="card"><b style="color:var(--pass)">10</b><span>Checks passed</span></div>
+</div>
+<h2>By area</h2>
+<div class="wrap"><table><tr><th>Area</th><th>Fail</th><th>Warn</th><th>Pass</th></tr><tr><td>Initial elections</td><td>3</td><td>0</td><td>3</td></tr><tr><td>Re-deferrals</td><td>3</td><td>0</td><td>3</td></tr><tr><td>Distributions</td><td>6</td><td>0</td><td>4</td></tr></table></div>
+<h2>Exception queue</h2>
+<div class="wrap"><table><tr><th>Severity</th><th>Rule</th><th>Item</th><th>Participant</th>
+<th>Finding</th><th>Citation</th></tr><tr><td><span class='pill fail'>FAIL</span></td><td class='mono'>DIST-001</td><td class='mono'>D-4004</td><td>Jordan Pace</td><td>IN_SERVICE is not a permissible 409A payment event; an in-service withdrawal is an impermissible acceleration.</td><td class='cite'>Treas. Reg. 1.409A-3(a)</td></tr><tr><td><span class='pill fail'>FAIL</span></td><td class='mono'>DIST-002</td><td class='mono'>D-4001</td><td>Avery Lund</td><td>Specified employee of a public company: payment 2026-08-01 is inside the six-month delay. Earliest date is 2026-12-30.</td><td class='cite'>Treas. Reg. 1.409A-3(i)(2)</td></tr><tr><td><span class='pill fail'>FAIL</span></td><td class='mono'>DIST-003</td><td class='mono'>D-4008</td><td>Taylor Brandt</td><td>Payment 2026-10-15 is before the elected date 2027-01-15: impermissible acceleration.</td><td class='cite'>Treas. Reg. 1.409A-3(j)(1)</td></tr><tr><td><span class='pill fail'>FAIL</span></td><td class='mono'>DIST-004</td><td class='mono'>D-4003</td><td>Jordan Pace</td><td>Requested $60,000.00 exceeds documented need of $48,750.00 (need may include taxes on the distribution).</td><td class='cite'>Treas. Reg. 1.409A-3(i)(3)</td></tr><tr><td><span class='pill fail'>FAIL</span></td><td class='mono'>DIST-004</td><td class='mono'>D-4006</td><td>Taylor Brandt</td><td>Plan document does not permit unforeseeable emergency payments.</td><td class='cite'>Treas. Reg. 1.409A-3(i)(3)</td></tr><tr><td><span class='pill fail'>FAIL</span></td><td class='mono'>DIST-005</td><td class='mono'>D-4009</td><td>Casey Romero</td><td>Balance $31,200.00 exceeds the 2026 402(g) limit of $24,500.</td><td class='cite'>Treas. Reg. 1.409A-3(j)(4)(v)</td></tr><tr><td><span class='pill fail'>FAIL</span></td><td class='mono'>ELECT-001</td><td class='mono'>E-2002</td><td>Jordan Pace</td><td>Bonus election for 2026 made 2026-01-09; must be made by 2025-12-31.</td><td class='cite'>Treas. Reg. 1.409A-2(a)(3)</td></tr><tr><td><span class='pill fail'>FAIL</span></td><td class='mono'>ELECT-002</td><td class='mono'>E-2005</td><td>Taylor Brandt</td><td>Performance bonus election made 2026-07-20; must be at least 6 months before period end (2026-06-30).</td><td class='cite'>Treas. Reg. 1.409A-2(a)(8)</td></tr><tr><td><span class='pill fail'>FAIL</span></td><td class='mono'>ELECT-003</td><td class='mono'>E-2006</td><td>Quinn Esparza</td><td>Newly-eligible election made 2026-03-15, after the 30-day window that closed 2024-01-31.</td><td class='cite'>Treas. Reg. 1.409A-2(a)(7)</td></tr><tr><td><span class='pill fail'>FAIL</span></td><td class='mono'>REDEF-001</td><td class='mono'>S-3002</td><td>Taylor Brandt</td><td>Re-deferral made 2026-06-01; must be at least 12 months before the original payment date (2027-03-01).</td><td class='cite'>Treas. Reg. 1.409A-2(b)(1)</td></tr><tr><td><span class='pill fail'>FAIL</span></td><td class='mono'>REDEF-001</td><td class='mono'>S-3003</td><td>Jordan Pace</td><td>Re-deferral made 2026-10-01; must be at least 12 months before the original payment date (2027-06-30).</td><td class='cite'>Treas. Reg. 1.409A-2(b)(1)</td></tr><tr><td><span class='pill fail'>FAIL</span></td><td class='mono'>REDEF-002</td><td class='mono'>S-3002</td><td>Taylor Brandt</td><td>New payment date 2030-03-01 is less than 5 years after the original date; earliest allowed is 2032-03-01.</td><td class='cite'>Treas. Reg. 1.409A-2(b)(1)</td></tr></table></div>
+<footer>Screening output for operations review. Not legal advice; plan document and counsel govern.
+Sample data is fictional.</footer>
+</main></body></html>

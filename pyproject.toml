@@ -1,0 +1,15 @@
+[project]
+name = "deferral-guard"
+version = "0.1.0"
+description = "Section 409A NQDC compliance screening on Oracle Autonomous Database, APEX and OCI Generative AI"
+authors = [{ name = "Robert Torres" }]
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = []
+
+[project.optional-dependencies]
+oracle = ["oci>=2.130", "oracledb>=2.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
